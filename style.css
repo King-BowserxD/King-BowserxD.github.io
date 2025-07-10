@@ -55,7 +55,7 @@ main {
 .name-title {
     font-size: 2.5em;
     font-weight: bold;
-    color: #000000;
+    color: #1F838F;
     margin-bottom: 30px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -76,7 +76,7 @@ main {
 
 .subtitle {
     font-size: 1.5em;
-    color: #000000;
+    color: #1F838F;
     margin-bottom: 20px;
     font-weight: 600;
 }
@@ -99,7 +99,7 @@ main {
 
 .biography {
     font-size: 1.1em;
-    color: #000000;
+    color: #1F838F;
     line-height: 1.6;
     margin: 0;
     text-align: justify;
@@ -141,7 +141,7 @@ main {
 }
 
 .social-text {
-    color: #000000;
+    color: #1F838F;
     font-weight: 500;
     font-size: 0.9em;
 }
