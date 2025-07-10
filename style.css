@@ -30,8 +30,8 @@ main {
 }
 
 .main-card {
-    background: rgba(255, 255, 255, 0.01); /* More transparent */
-    backdrop-filter: blur(10px); /* Stronger blur for glass effect */
+    background: rgba(255, 255, 255, 0.25); /* More transparent */
+    backdrop-filter: blur(20px); /* Stronger blur for glass effect */
     border-radius: 20px;
     padding: 40px;
     text-align: center;
@@ -55,7 +55,7 @@ main {
 .name-title {
     font-size: 2.5em;
     font-weight: bold;
-    color: #E7F3F4;
+    color: #000000;
     margin-bottom: 30px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -76,13 +76,13 @@ main {
 
 .subtitle {
     font-size: 1.5em;
-    color: #E7F3F4;
+    color: #000000;
     margin-bottom: 20px;
     font-weight: 600;
 }
 
 .biography-container {
-    background: rgba(255, 255, 255, 0.01);
+    background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     border-radius: 15px;
     padding: 20px;
@@ -99,7 +99,7 @@ main {
 
 .biography {
     font-size: 1.1em;
-    color: #E7F3F4;
+    color: #000000;
     line-height: 1.6;
     margin: 0;
     text-align: justify;
@@ -114,8 +114,8 @@ main {
 
 .social-box.discord-link,
 .social-box.github-link {
-    background: rgba(255, 255, 255, 0.01); /* Increased transparency */
-    backdrop-filter: blur(10px); /* Slightly stronger blur */
+    background: rgba(255, 255, 255, 0.2); /* Increased transparency */
+    backdrop-filter: blur(15px); /* Slightly stronger blur */
     border-radius: 15px;
     padding: 15px 20px;
     display: flex;
@@ -141,7 +141,7 @@ main {
 }
 
 .social-text {
-    color: #E7F3F4
+    color: #000000;
     font-weight: 500;
     font-size: 0.9em;
 }
@@ -343,11 +343,14 @@ body.overlay-open {
     flex-grow: 1;
 }
 
+/* Download Button Styles */
 .download-btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background: linear-gradient(45deg, #5865F2, #9147ff);
     color: white;
-    padding: 12px 25px;
+    padding: 15px 30px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
@@ -356,12 +359,90 @@ body.overlay-open {
     border: none;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(88, 101, 242, 0.3);
+    position: relative;
+    overflow: hidden;
+    min-width: 180px;
+    height: 50px;
 }
 
 .download-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(88, 101, 242, 0.4);
     background: linear-gradient(45deg, #4752c4, #7c3aed);
+}
+
+/* Spinner Animation */
+@keyframes rotateBefore {
+    from {
+        transform: rotateX(60deg) rotateY(45deg) rotateZ(0deg);
+    }
+    to {
+        transform: rotateX(60deg) rotateY(45deg) rotateZ(-360deg);
+    }
+}
+
+@keyframes rotateAfter {
+    from {
+        transform: rotateX(240deg) rotateY(45deg) rotateZ(0deg);
+    }
+    to {
+        transform: rotateX(240deg) rotateY(45deg) rotateZ(360deg);
+    }
+}
+
+.spinner {
+    position: relative;
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.spinner:before,
+.spinner:after {
+    box-sizing: border-box;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -1em;
+    margin-left: -1em;
+    width: 2em;
+    height: 2em;
+    transform-style: preserve-3d;
+    transform-origin: 50%;
+    perspective-origin: 50% 50%;
+    perspective: 340px;
+    background-size: 2em 2em;
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjI2NnB4IiBoZWlnaHQ9IjI5N3B4IiB2aWV3Qm94PSIwIDAgMjY2IDI5NyIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWxuczpza2V0Y2g9Imh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaC9ucyI+CiAgICA8dGl0bGU+c3Bpbm5lcjwvdGl0bGU+CiAgICA8ZGVzY3JpcHRpb24+Q3JlYXRlZCB3aXRoIFNrZXRjaCAoaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoKTwvZGVzY3JpcHRpb24+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBza2V0Y2g6dHlwZT0iTVNQYWdlIj4KICAgICAgICA8cGF0aCBkPSJNMTcxLjUwNzgxMywzLjI1MDAwMDM4IEMyMjYuMjA4MTgzLDEyLjg1NzcxMTEgMjk3LjExMjcyMiw3MS40OTEyODIzIDI1MC44OTU1OTksMTA4LjQxMDE1NSBDMjE2LjU4MjAyNCwxMzUuODIwMzEgMTg2LjUyODQwNSw5Ny4wNjI0OTY0IDE1Ni44MDA3NzQsODUuNzczNDM0NiBDMTI3LjA3MzE0Myw3NC40ODQzNzIxIDc2Ljg4ODQ2MzIsODQuMjE2MTQ2MiA2MC4xMjg5MDY1LDEwOC40MTAxNTMgQy0xNS45ODA0Njg1LDIxOC4yODEyNDcgMTQ1LjI3NzM0NCwyOTYuNjY3OTY4IDE0NS4yNzczNDQsMjk2LjY2Nzk2OCBDMTQ1LjI3NzM0NCwyOTYuNjY3OTY4IC0yNS40NDkyMTg3LDI1Ny4yNDIxOTggMy4zOTg0Mzc1LDEwOC40MTAxNTUgQzE2LjMwNzA2NjEsNDEuODExNDE3NCA4NC43Mjc1ODI5LC0xMS45OTIyOTg1IDE3MS41MDc4MTMsMy4yNTAwMDAzOCBaIiBpZD0iUGF0aC0xIiBmaWxsPSIjRkZGRkZGIiBza2V0Y2g6dHlwZT0iTVNTaGFwZUdyb3VwIj48L3BhdGg+CiAgICA8L2c+Cjwvc3ZnPg==);
+}
+
+.spinner:before {
+    transform: rotateX(60deg) rotateY(45deg) rotateZ(45deg);
+    animation: 750ms rotateBefore infinite linear reverse;
+}
+
+.spinner:after {
+    transform: rotateX(240deg) rotateY(45deg) rotateZ(45deg);
+    animation: 750ms rotateAfter infinite linear;
+}
+
+.download-btn .btn-text {
+    position: relative;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+
+.download-btn.downloading .btn-text {
+    opacity: 0;
+}
+
+.download-btn.downloading .spinner {
+    display: block;
 }
 
 /* Main Card */
