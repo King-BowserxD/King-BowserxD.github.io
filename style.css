@@ -31,7 +31,7 @@ main {
 
 .main-card {
     background: rgba(255, 255, 255, 0.25); /* More transparent */
-    backdrop-filter: blur(20px); /* Stronger blur for glass effect */
+    backdrop-filter: blur(10px); /* Stronger blur for glass effect */
     border-radius: 20px;
     padding: 40px;
     text-align: center;
