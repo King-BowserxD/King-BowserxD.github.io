@@ -30,7 +30,7 @@ main {
 }
 
 .main-card {
-    background: rgba(255, 255, 255, 1); /* More transparent */
+    background: rgba(255, 255, 255, 0.03); /* More transparent */
     backdrop-filter: blur(10px); /* Stronger blur for glass effect */
     border-radius: 20px;
     padding: 40px;
@@ -55,7 +55,7 @@ main {
 .name-title {
     font-size: 2.5em;
     font-weight: bold;
-    color: #1F838F;
+    color: #E7F3F4;
     margin-bottom: 30px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -76,7 +76,7 @@ main {
 
 .subtitle {
     font-size: 1.5em;
-    color: #1F838F;
+    color: #E7F3F4;
     margin-bottom: 20px;
     font-weight: 600;
 }
@@ -99,7 +99,7 @@ main {
 
 .biography {
     font-size: 1.1em;
-    color: #1F838F;
+    color: #E7F3F4;
     line-height: 1.6;
     margin: 0;
     text-align: justify;
@@ -141,7 +141,7 @@ main {
 }
 
 .social-text {
-    color: #1F838F;
+    color: #E7F3F4
     font-weight: 500;
     font-size: 0.9em;
 }
