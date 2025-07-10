@@ -30,7 +30,7 @@ main {
 }
 
 .main-card {
-    background: rgba(255, 255, 255, 0.25); /* More transparent */
+    background: rgba(255, 255, 255, 1); /* More transparent */
     backdrop-filter: blur(10px); /* Stronger blur for glass effect */
     border-radius: 20px;
     padding: 40px;
@@ -82,7 +82,7 @@ main {
 }
 
 .biography-container {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(10px);
     border-radius: 15px;
     padding: 20px;
@@ -114,8 +114,8 @@ main {
 
 .social-box.discord-link,
 .social-box.github-link {
-    background: rgba(255, 255, 255, 0.2); /* Increased transparency */
-    backdrop-filter: blur(15px); /* Slightly stronger blur */
+    background: rgba(255, 255, 255, 0.5); /* Increased transparency */
+    backdrop-filter: blur(10px); /* Slightly stronger blur */
     border-radius: 15px;
     padding: 15px 20px;
     display: flex;
