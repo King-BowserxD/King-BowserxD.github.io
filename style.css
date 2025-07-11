@@ -132,7 +132,8 @@ main {
 }
 
 .social-box.discord-link,
-.social-box.github-link {
+.social-box.github-link,
+.social-box.epicgames-link{
     background: rgba(255, 255, 255, 0.2); /* Increased transparency */
     backdrop-filter: blur(15px); /* Slightly stronger blur */
     border-radius: 15px;
