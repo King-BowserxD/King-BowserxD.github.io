@@ -16,6 +16,12 @@ body {
     position: relative;
 }
 
+.socialboximage {
+    width: 60px;
+    height: 60px;
+    border-radious: 100px;
+}
+
 body::before {
     content: '';
     position: fixed;
